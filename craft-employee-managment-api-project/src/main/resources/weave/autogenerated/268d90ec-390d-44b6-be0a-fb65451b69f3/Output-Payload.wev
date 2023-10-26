@@ -1,0 +1,11 @@
+%dw 2.0
+
+type auto_268d90ec_390d_44b6_be0a_fb65451b69f3_Output_Payload = {
+  firstName: String, 
+  lastName: String, 
+  id: Number, 
+  salary: Number, 
+  age: Number, 
+  _?: Any
+}
+

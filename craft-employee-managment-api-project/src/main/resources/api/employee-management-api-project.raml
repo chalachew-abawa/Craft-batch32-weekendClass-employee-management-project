@@ -1,0 +1,53 @@
+#%RAML 1.0
+title: Employee-Management-Api-project
+#baseuri: http://localhost:8081/api/
+version: 1.0.0
+protocols:
+  - http
+  - https
+uses:
+  lib: library.raml
+securedBy:
+  - lib.secure
+/employees:
+  type:
+    lib.employees_resource
+  is:
+        - lib.error            
+  post:
+     responses:
+      201:
+        body:
+          application/json:
+            type: lib.Emp_data_type []
+            example:  !include Example/employees.json 
+     is:
+      - lib.error
+  /{emp-id}:
+    type:
+      lib.emp_id_resource
+    is:
+      - lib.error        
+    put:
+     description: update the emp data in to the database
+     responses:
+      201:
+        body:
+          application/json:
+            type: lib.Emp_data_type
+            example: !include Example/emp_id.json
+     is:
+      - lib.error
+    delete:
+       description: update the emp data in to the database
+       responses:
+        200:
+         body:
+          application/json:
+            type: lib.Emp_data_type
+            example: !include Example/emp_id.json
+       is:
+         - lib.error
+           
+
+

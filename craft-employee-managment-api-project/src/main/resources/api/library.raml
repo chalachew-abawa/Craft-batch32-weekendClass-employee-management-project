@@ -1,0 +1,12 @@
+#%RAML 1.0 Library
+usage:
+types:
+  Emp_data_type: !include Data-Type/emp-dataType.raml
+traits:
+  error: !include trait.raml
+resourceTypes:
+  get_collection: !include Resource_Type/emp_resourceType.raml
+  emp_id_resource: !include Resource_Type/emp_id_resource_type.raml
+  employees_resource: !include  Resource_Type/employees_resourceType.raml
+securitySchemes:
+  secure: !include securityScheme.raml
